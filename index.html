@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Necropunk</title>
+  </head>
+  <body>
+    <!-- Music Player -->
+
+    <div class="music-container" id="music-container">
+
+      <audio src="" id="audio"></audio>
+
+      <div gird-item grid-item1>
+
+        <div class="info-grid">
+          <div grid-item grid-item1>
+            <div class="img-container">
+              <img src="" alt="music-cover" id="cover" />
+            </div>
+          </div>
+
+          <div grid-item grid-item2>
+            <div class="info-container">
+              <p id="title"></p>
+                <div class="progress-container" id="progress-container">
+                  <div class="progress" id="progress"></div>
+                </div>
+            </div>
+          </div>
+        </div> <!-- / Infogrid -->
+
+       </div>
+
+      <div grid-item grid-item2>
+        <div class="navigation">
+          <button id="prev" class="action-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button id="play" class="action-btn action-btn-big">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="action-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Music Player -->
+
+    <!-- Header -->
+    <nav>
+      <ul class="topnav">
+              <li><a href="index.html">About</a></li>
+              <li><a href="community.html">Community</a></li>
+              <li><a href="concerts.html">Concerts</a></li>
+              <li><a href="music-library.html">Music Library</a></li>
+      </ul>
+    </nav>
+    <!-- / Header -->
+
+    <!-- Titlecard -->
+    <div class="background">
+      <h1>Welcome to the <br> Necropunk <br> Community</h1>
+      <p> A place for metalheads, punks, rock and rollers, <br>
+          and everything in between and beyond! Here you <br>
+          will find band biographies, curated playlists, <br>
+          concert tickets, and a raging community to share <br>
+          your interests with. <br>
+          <br>
+      </p>
+    </div>
+  <!-- /Titlecard -->
+
+  <!-- Content divisions -->
+
+    <div class="content-card" id="dark-red">
+      <div class="grid-item grid-item1">
+        <h2 id="white">Music Library</h2>
+        <p id ="white"> Explore our extensive library of music, curated by the staff and by the community.</p>
+        <button id="button1" type="button" class="btn btn-light button1">Library →</button>
+      </div>
+      <div class="grid-item grid-item2">
+        <img src="https://media.npr.org/assets/img/2013/01/04/gettyimages_157277079-584277d090aa26423f74e271a771fce41fa2abd4-s1600-c85.webp" class="card-pic">
+      </div>
+    </div>
+
+
+    <div class="content-card" id="light-red">
+      <div>
+        <h2 id="black">Community</h2>
+        <p id="black"> The only thing more important than music is people, </p>
+        <button id="button1" type="button" class="btn btn-dark button1">Forums →</button>
+      </div>
+      <div class="grid-item grid-item2">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjgwYTdhNzYtNjE2Zi00OGNiLTg3Y2ItM2Q4NTJlNDhjODFhXkEyXkFqcGdeQXVyMTEyODE4NjM2._V1_.jpg" class="card-pic">
+      </div>
+    </div>
+
+
+    <div class="content-card" id="grey">
+      <div grid-item grid-item1>
+        <h2 id="white">Concerts</h2>
+        <p id="white"> The biggest — and smallest — concerts around the globe, all in one place. Buy tickets, explore the local scene; or promote and organize your own events.</p>
+        <button id="button1" type="button" class="btn btn-light button1">Concerts →</button>
+      </div>
+      <div class="grid-item grid-item2">
+        <img src="https://cdn.mos.cms.futurecdn.net/ZpER3PFWjCzfTA6F4uQuwP-1920-80.jpg.webp" class="card-pic">
+      </div>
+    </div>
+
+    <!-- / Content divisions -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h1> Bring the fight to 'em. </h1>
+
+      This is a project for CS50. <br>
+      <br>
+      Aknowledgments : <br>
+      Initial idea based on the Pentakill website, courtesy of Riot Games. <br>
+      Music player code from Traversy Media on YouTube. <br>
+      Songs created and performed by Gojira. <br>
+      Further credits provided in code notes. <br>
+
+    </footer>
+    <!-- / Footer -->
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

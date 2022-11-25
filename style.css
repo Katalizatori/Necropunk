@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/* Credits: "Build a Music Player | Vanilla JavaScript" */
+/* Inspiration from NPR player as well */
+
+.music-container {
+  background-color: rgba(22, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 10px black;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 88px 50px;
+  padding: 10px 20px;
+  width: 300px;
+  height: 138px;
+  top: 44px;
+  right: 20px;
+  position: fixed;
+  z-index: 10;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 80px 220px;
+}
+
+
+.img-container {
+  position: relative;
+  width: 70px;
+}
+
+.img-container img {
+  border-radius: 5px;
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+  bottom: 0;
+  left: 0;
+}
+
+.info-container {
+  width: 80%;
+}
+
+.navigation {
+  position: relative;
+  top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: transparent;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 20px;
+}
+
+.action-btn.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: red;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* /music player */
+
+/* General */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+body a {
+  text-decoration: none;
+  color: red;
+}
+
+body a:hover {
+  text-decoration: underline;
+}
+
+body p, h1, h2, h3 {
+  padding: 0px 20px;
+}
+
+body ::selection {
+  background: #e90000;
+}
+
+h1 {
+  font-family: 'Grobe Deutschmeister'; /* Grobe Deutschmeister, Blankenburg */
+  font-size: 70px;
+  line-height: 1em;
+  color: #862016;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Tannenberg';
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: 'Grobe Deutschmeister'; /* Grobe Deutschmeister, Blankenburg */
+  font-size: 100px;
+  color: #862016;
+}
+
+.footer {
+  width: 100%;
+  height: calc(padding + font-size);
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+
+.footer h1 {
+  font-size: 25px;
+}
+
+/* Navigation bar */
+
+.topnav {
+  height: 47.7px;
+  background-color: black;
+  width: 100%;
+  padding: 14px 0px 0px 0px;
+  margin-bottom: 0px;
+  list-style: none;
+  opacity: 0.6;
+  border-bottom: 0.5px solid white;
+  text-align: center;
+}
+
+.topnav li {
+  display: inline;
+  margin: 20px;
+}
+
+.topnav a {
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Titlecard */
+
+.background {
+  background-image: url(images/background-bw.jpg);
+  /* https://images.unsplash.com/photo-1659928005652-d1ba642b60a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" */
+  background-origin: border-box;
+  background-size: cover;
+  background-position: center; /* FIXED EVERYTHING */
+}
+
+/* Content card - Index */
+
+.content-card {
+  position: relative; /* fixed the button issue */
+  width: 80%;
+  height: 200px;
+  position: center;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin: 0% 10% 1% 10%;
+  border-radius: 12px;
+}
+
+.card-pic {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  filter: grayscale(100%);
+  border-radius: 12px;
+}
+
+/* Content card - Music Library */
+
+.content-card2 {
+  background-color: #111111;
+  margin: auto; /* centers content */
+  width: 70%;
+  height: 250px;
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  border-bottom: 1px solid black;
+  margin-bottom: 40px;
+  border-radius: 12px;
+}
+
+
+.content-card2 ul {
+  list-style-type: none;
+  position: relative;
+  top: -30px;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+  width: 100%;
+  line-height: 2;
+} /* Credits: https://stackoverflow.com/questions/6509106/is-there-a-way-to-break-a-list-into-columns*/
+
+
+.album-title {
+  font-size: 70px;
+  -webkit-text-stroke: 0.5px white;
+  position: relative;
+  top: -45px;
+  float: right;
+  z-index: 3;
+  color: #1B1212;
+}
+
+.card-pic2 {
+  object-fit: cover;
+  width: 1fr;
+  height: 250px;
+  border-radius: 12px;
+  position: relative;
+  left: 20px;
+}
+
+.card-header {
+  height: 40px;
+}
+
+.card-header button {
+  float: right;
+  background-color: black;
+  margin-left: 5px;
+  height: 30px;
+}
+
+.card-header svg {
+  position: relative;
+  top: -6px;
+}
+
+.card-body h5 > span {
+  font-size: 10px;
+  font-family: inherit;
+  display: inline;
+  padding-left: 20px;
+}
+
+.no-style {
+  background: none;
+  color: inherit;
+  border: none;
+}
+
+
+/* Content card - Concerts */
+
+.content-grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+}
+
+.content-grid3 .grid-item {
+  height: 300px;
+  width: 80%;
+}
+
+.content-grid3 .card-img-overlay {
+  background-image: linear-gradient(black, transparent);
+  object-fit: cover;
+  height: 100px;
+  width: 100%;
+}
+
+/* Content card - Community */
+
+.content-grid4 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.card {
+  margin: 40px;
+  background-color: #1B1212;
+}
+
+/* Color palette */
+    /* [!] Only use id for colors */
+
+    #white {
+      color: #E5E4E2;
+  }
+
+  #black {
+      color: #1B1212;
+  }
+
+  #dark-red {
+      background-color: #1B1212;
+  }
+
+  #light-red {
+      background-color: #7C3030;
+  }
+
+  #grey {
+      background-color: #24292c;
+  }
+
